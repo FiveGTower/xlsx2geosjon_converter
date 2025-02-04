@@ -1,0 +1,54 @@
+{
+    "type": "FeatureCollection",
+    "name": "example.xlsx",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "0",
+                "buffer": 0
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            64.070241,
+                            67.541
+                        ],
+                        [
+                            63.994,
+                            67.52346675
+                        ],
+                        [
+                            63.94649,
+                            67.48185
+                        ],
+                        [
+                            64.06928,
+                            67.4719
+                        ],
+                        [
+                            64.1349,
+                            67.5339
+                        ],
+                        [
+                            64.0702,
+                            67.5416
+                        ],
+                        [
+                            64.070241,
+                            67.541
+                        ]
+                    ]
+                ]
+            }
+        }
+    ],
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    }
+}

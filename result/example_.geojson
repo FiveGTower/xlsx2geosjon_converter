@@ -1,0 +1,32 @@
+{
+    "type": "FeatureCollection",
+    "name": "example_.geojson",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        63.73361,
+                        67.4973996
+                    ],
+                    [
+                        64.3167,
+                        67.52157
+                    ]
+                ]
+            },
+            "properties": {
+                "name": "0",
+                "buffer": 0
+            }
+        }
+    ],
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    }
+}
