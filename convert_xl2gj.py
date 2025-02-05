@@ -271,8 +271,8 @@ def main():
                         help="Отключить проверку цикличности нумерации")
     parser.add_argument("--start-cell", type=str, default=None,
                         help="Адрес ячейки начала парсинга координат полигона (например, F19)")
-    parser.add_argument("--no-anchor-geojson", action="store_true",
-                        help="Отключить создание GeoJSON с координатами привязки")
+    parser.add_argument("--enable-anchor-geojson", action="store_true",
+                        help="Включить создание GeoJSON с координатами привязки (по умолчанию отключено)")
     args = parser.parse_args()
 
     excel_files = get_excel_files(args.input)
@@ -295,7 +295,7 @@ def main():
             polygon_coords,
             anchor_coords,
             args.output,
-            create_anchor=not args.no_anchor_geojson
+            create_anchor=args.enable_anchor_geojson
         )
     print("Обработка завершена!")
 

@@ -24,9 +24,9 @@
   Задает адрес ячейки (например, `"F19"`), с которой начинается парсинг координат полигона. Если указан, автоматический поиск первой координаты не выполняется.  
   **По умолчанию:** не задан.
 
-- **--no-anchor-geojson**  
-  Отключает генерацию GeoJSON-файла для координат привязки.  
-  **По умолчанию:** GeoJSON для привязки создается.
+- **--enable-anchor-geojson**  
+  Включает генерацию GeoJSON-файла для координат привязки.  
+  **По умолчанию:** GeoJSON для привязки не создается.
 
 ### Примеры запуска
 
@@ -36,4 +36,4 @@
   py convert_xl2gj.py
 - **Запуск с использованием всех аргументов:**  
   ```bash
-  python convert_xl2gj.py example.xlsx -o "geojsonfolder/automatic" --no-cycle-check --start-cell F5 --no-anchor-geojson
+  python convert_xl2gj.py example.xlsx -o "geojsonfolder/automatic" --enable-anchor-geojson --start-cell F5 --no-cycle-check
