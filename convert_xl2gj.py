@@ -34,16 +34,22 @@ def is_valid_coordinate(coord_str: str) -> bool:
     Выходные данные:
       bool: True, если строка соответствует формату координат, иначе False.
     """
-    pattern = r'^(?:[NS]\d+\.\d+\s[EW]\d+\.\d+|[EW]\d+\.\d+\s[NS]\d+\.\d+|\d+\.\d+\s\d+\.\d+)$'
+    pattern = r'^(?:N\d+\.\d+\sE\d+\.\d+|E\d+\.\d+\sN\d+\.\d+|\d+\.\d+\s\d+\.\d+)$'
+    
     if not re.match(pattern, coord_str):
         return False
+    
     try:
         parts = coord_str.split()
-        values = [float(part[1:]) if part[0] in "NSEW" else float(part) for part in parts]
+        # Если часть начинается с буквы, допускается только N или E
+        values = [float(part[1:]) if part[0] in "NE" else float(part) for part in parts]
         if len(values) != 2:
             return False
-        # Если первая часть начинается с E или W, то порядок: (долгота, широта), иначе наоборот.
-        lon, lat = values if parts[0][0] in "EW" else reversed(values)
+        
+        # Если первая часть начинается с E, то порядок координат: (долгота, широта),
+        # иначе (широта, долгота) и их нужно поменять местами, чтобы далее проверить:
+        lon, lat = values if parts[0][0] == "E" else reversed(values)
+        
         return 0 <= lon <= 180 and 0 <= lat <= 90
     except ValueError:
         return False
