@@ -192,8 +192,6 @@ class FileDropTarget(wx.FileDropTarget):
 class MainFrame(wx.Frame):
     def __init__(self):
         super().__init__(None, title="Geojson convert", size=(1200, 700))
-        # Устанавливаем иконку окна
-        self.SetIcon(wx.Icon("big_tree_icon.ico", wx.BITMAP_TYPE_ICO))
         self.SetBackgroundColour("#66cc66")
         self.outputFiles = []  # Список кортежей (filename, fullPath) для выходных файлов
         self.InitOutputFiles()
